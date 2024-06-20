@@ -4022,7 +4022,10 @@ blockquote:before {
     }
 }
 /*== > inner page banner ==*/
-
+#testimonals{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
 .bnr-inr {
     height: 340px;
     background-size: cover;
@@ -9203,6 +9206,7 @@ footer.footer-white .footer-bottom a {
 .page-content {
     margin-top: 0;
     padding-bottom: 50px;
+    background: #fff;
 }
 .content-area {
     padding-top: 60px;
