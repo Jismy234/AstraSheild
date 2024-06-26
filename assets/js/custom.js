@@ -696,3 +696,22 @@ jQuery(window).on('resize',function () {
 	Clean360.resize();
 });
 /*  Window Resize END */
+ function sendEmail() {
+    var email = "sales@astrashieldprojects.com";
+    var subject = "Inquiry";
+    var body = "Hello, I would like to know more about your services.";
+    var userAgent = navigator.userAgent.toLowerCase();
+
+    // Check if the user is on Gmail
+    if (userAgent.indexOf("gmail") > -1) {
+      var gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+      window.open(gmailUrl, '_blank');
+    } else if (userAgent.indexOf("outlook") > -1 || userAgent.indexOf("hotmail") > -1) {
+      var outlookUrl = `https://outlook.live.com/owa/?path=/mail/action/compose&to=${email}&subject=${subject}&body=${body}`;
+      window.open(outlookUrl, '_blank');
+    } else {
+      // Fallback to mailto: protocol
+      var mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}`;
+      window.location.href = mailtoUrl;
+    }
+  }
